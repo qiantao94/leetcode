@@ -2,6 +2,8 @@ package main;
 
 import category.Array;
 
+import java.util.Arrays;
+
 /**
  * Created by qiantao on 2017/2/3.
  * 示例程序
@@ -9,7 +11,8 @@ import category.Array;
 public class Main {
 
     public static void main(String args[]) {
-        int[] arr = {1,1,3, 5};
-        System.out.println("length: "+Array.removeDuplicates2(arr));
+        int[][] arr = Array.pascalTriangle(5);
+        System.out.println(Arrays.deepToString(arr));
+        System.out.println(Array.generate(5).toString());
     }
 }
