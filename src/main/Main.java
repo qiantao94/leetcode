@@ -13,6 +13,5 @@ public class Main {
     public static void main(String args[]) {
         int[][] arr = Array.pascalTriangle(5);
         System.out.println(Arrays.deepToString(arr));
-        System.out.println(Arrays.generate(5).toString());
     }
 }
