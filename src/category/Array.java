@@ -2,15 +2,33 @@ package category;
 
 import com.sun.deploy.util.ArrayUtil;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by qiantao on 2017/2/3.
  * 数组
  */
 public class Array {
+
+    /**
+     * 判断数组是否有重复
+     * 217. Contains Duplicate
+     *
+     * @param arr 数组
+     * @return 是否重复
+     */
+    public static Boolean containsDuplicate(int[] arr) {
+//        Set<Integer> set = new HashSet<>();
+//        for (int a : arr) {
+//            if (!set.add(a)) return true;
+//        }
+//        return false;
+        Arrays.sort(arr);
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] == arr[i + 1]) return true;
+        }
+        return false;
+    }
 
     /**
      * 从一个数组移除指定的value，并返回数组的长度，且不新建数组
