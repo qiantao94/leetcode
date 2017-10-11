@@ -1,3 +1,3 @@
-# LeetCode题解java版
+# LeetCode题解kotlin版
 按题型分类，譬如数组类的在`Array.class`中。<br/><br/>
 持续更新中...
