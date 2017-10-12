@@ -1,6 +1,7 @@
 package main;
 
 import category.Array;
+import category.Bit;
 
 import java.util.Arrays;
 
@@ -11,7 +12,6 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String args[]) {
-        int[][] arr = Array.pascalTriangle(5);
-        System.out.println(Arrays.deepToString(arr));
+        System.out.println(Bit.hammingDistance(4,14));
     }
 }
