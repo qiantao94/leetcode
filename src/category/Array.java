@@ -147,4 +147,26 @@ public class Array {
         }
         return count * 4 - n * 2;
     }
+
+    /**
+     * 一个数组中的所有的数都重复两次，除了一个数，找出这个数
+     * 136. Single Number
+     */
+    public static int singleNumber(int[] nums) {
+//        Arrays.sort(nums);
+//        for (int i = 0; i < nums.length; i++) {
+//            if (i < nums.length - 1) {
+//                if (i == 0 && nums[i] != nums[i + 1]) return nums[i];
+//                else if (i > 0 && nums[i] != nums[i + 1] && nums[i - 1] != nums[i]) return nums[i];
+//            } else {
+//                return nums[i];
+//            }
+//        }
+//        return nums[0];
+        int ans =0;
+        int len = nums.length;
+        for(int i=0;i!=len;i++)
+            ans ^= nums[i];
+        return ans;
+    }
 }
