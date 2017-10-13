@@ -127,4 +127,24 @@ public class Array {
         }
         return arrs;
     }
+
+    /**
+     * 计算岛的边长
+     *
+     * 463. Island Perimeter
+     */
+    public static int islandPerimeter(int[][] grid){
+        int count = 0;
+        int n = 0;
+        for(int i = 0; i < grid.length; i++ ){
+            for(int j = 0; j < grid[i].length; j++){
+                if(grid[i][j] == 1){
+                    count ++;
+                    if(i < grid.length - 1 && grid[i + 1][j] == 1) n++;
+                    if(j < grid[i].length - 1 && grid[i][j + 1] == 1) n++;
+                }
+            }
+        }
+        return count * 4 - n * 2;
+    }
 }
