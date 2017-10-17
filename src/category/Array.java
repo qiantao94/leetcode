@@ -169,4 +169,20 @@ public class Array {
             ans ^= nums[i];
         return ans;
     }
+
+    /**
+     * 数组范围[1,n] n是数组大小，数组中有重复出现两次的数，也就有缺失的数，找到缺失的数
+     * 448. Find All Numbers Disappeared in an Array
+     */
+    public static List<Integer> findDisappearedNumbers(int[] nums) {
+        List<Integer> result = new ArrayList<>();
+        boolean[] exists = new boolean[nums.length + 1];
+        for (int i = 0; i < exists.length; i++) {
+            exists[nums[i]] = true;
+        }
+        for (int i = 1; i <= nums.length; i++) {
+            if (!exists[i]) result.add(i);
+        }
+        return result;
+    }
 }
