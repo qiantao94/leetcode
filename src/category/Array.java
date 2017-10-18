@@ -130,18 +130,18 @@ public class Array {
 
     /**
      * 计算岛的边长
-     *
+     * <p>
      * 463. Island Perimeter
      */
-    public static int islandPerimeter(int[][] grid){
+    public static int islandPerimeter(int[][] grid) {
         int count = 0;
         int n = 0;
-        for(int i = 0; i < grid.length; i++ ){
-            for(int j = 0; j < grid[i].length; j++){
-                if(grid[i][j] == 1){
-                    count ++;
-                    if(i < grid.length - 1 && grid[i + 1][j] == 1) n++;
-                    if(j < grid[i].length - 1 && grid[i][j + 1] == 1) n++;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                if (grid[i][j] == 1) {
+                    count++;
+                    if (i < grid.length - 1 && grid[i + 1][j] == 1) n++;
+                    if (j < grid[i].length - 1 && grid[i][j + 1] == 1) n++;
                 }
             }
         }
@@ -163,9 +163,9 @@ public class Array {
 //            }
 //        }
 //        return nums[0];
-        int ans =0;
+        int ans = 0;
         int len = nums.length;
-        for(int i=0;i!=len;i++)
+        for (int i = 0; i != len; i++)
             ans ^= nums[i];
         return ans;
     }
@@ -184,5 +184,32 @@ public class Array {
             if (!exists[i]) result.add(i);
         }
         return result;
+    }
+
+    /**
+     * 将数组中的0移动到数组后面且不新建数组
+     * 283. Move Zeroes
+     */
+    public static void moveZeroes(int[] nums) {
+//        int index = 0;
+//        int count = 0;
+//        for(int i = 0; i < nums.length; i++){
+//            if(nums[i] != 0){
+//                nums[index] = nums[i];
+//                index++;
+//            } else {
+//                count++;
+//            }
+//        }
+//        for(int i = nums.length - 1; i > nums.length - 1 - count; i--){
+//            nums[i] = 0;
+//        }
+        int i = 0;
+        for (int num : nums) {
+            if (num != 0) nums[i++] = num;
+        }
+        while (i < nums.length) {
+            nums[i++] = 0;
+        }
     }
 }
