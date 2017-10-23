@@ -20,15 +20,12 @@ class List {
      */
     public static void printListReverse(ListNode node) {
         Stack<ListNode> stack = new Stack<>();
-        ListNode head = node;
-        while (head != null) {
-            stack.push(head);
-            head = head.next;
+        while (node != null) {
+            stack.push(node);
+            node = node.next;
         }
         while (!stack.isEmpty()) {
-            head = stack.peek();
-            System.out.println(head.val);
-            stack.pop();
+            System.out.println(stack.pop().val);
         }
     }
 }
