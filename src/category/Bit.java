@@ -34,4 +34,24 @@ public class Bit {
         }
         return count;
     }
+
+    /**
+     * 二进制中1的个数
+     */
+    public static int numberOf1InBinary(int number) {
+        int count = 0;
+//        int flag = 1;
+//        while (flag > 0) {
+//            if ((flag & number) > 0) {
+//                count++;
+//            }
+//            flag <<= 1;
+//        }
+//        return count;
+        while (number > 0) {
+            count++;
+            number &= number - 1;
+        }
+        return count;
+    }
 }
