@@ -72,7 +72,7 @@ public class Tree {
             node = stack.pop();
             sum += node.val;
             node.val = sum;
-
+ 
             node = node.left;
         }
 
